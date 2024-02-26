@@ -2,7 +2,7 @@
 **H**omologous **R**ecombination Profiler (HRProfiler) is a classification tool that predicts HRD status for  both whole-genome and exome-sequenced breast and ovarian samples using HRD-specific mutation and copy number features.
 
 [![License](https://img.shields.io/badge/License-BSD\%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause) 
-[![Build Status](https://app.travis-ci.com/amabbasi1/HRProfiler.svg?token=a3BWsS27xdCyy15xBGV6&branch=main)](https://app.travis-ci.com/amabbasi1/HRProfiler)
+[![Build Status](https://app.travis-ci.com/AlexandrovLab/HRProfiler.svg?token=tnMyG42yezzqz5hbqp9x&branch=main)](https://app.travis-ci.com/AlexandrovLab/HRProfiler)
 ## Installation
 
 ```bash
