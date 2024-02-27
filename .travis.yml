@@ -6,3 +6,7 @@ python:
   
 install:
   - pip install .
+
+scripts:
+  # integration test
+  - python HRProfiler/example/run_hrprofiler.py 
