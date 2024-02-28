@@ -39,7 +39,7 @@ setup(
     author="Ammal Abbasi",
     author_email="amabbasi@ucsd.edu",
     license="UCSD",
-    packages=["HRProfiler"],
+    packages=["HRProfiler", "HRProfiler.scripts"],
     python_requires=">=3.8",
     install_requires=[
         "sigProfilerPlotting>=1.3.16",
