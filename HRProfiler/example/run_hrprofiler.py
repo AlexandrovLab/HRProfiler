@@ -11,7 +11,7 @@ if not os.path.exists(output_path):
     os.makedirs(output_path)
 
 HR.HRProfiler(data_matrix=None,
-              genome='GRCh38', 
+              genome='GRCh37', 
               exome=False, 
               INDELS_DIR=input_path + 'indels/',
               SNV_DIR=input_path + 'mutations/',
