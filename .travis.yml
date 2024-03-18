@@ -3,10 +3,22 @@ language: python
 
 python:
   - '3.8'
-  
+
+before_install:
+  if ! [ -f ./src/GRCh38.tar.gz ]; then
+    wget ftp://alexandrovlab-ftp.ucsd.edu/pub/tools/SigProfilerMatrixGenerator/GRCh38.tar.gz -P ./src/;
+  fi
+
 install:
   - pip install .
 
+cache:
+  directories:
+    - $TRAVIS_BUILD_DIR/src/
+
+before_script:
+  - python3 install_genome.py $TRAVIS_BUILD_DIR/src/
+
 scripts:
   # integration test
-  - python HRProfiler/example/run_hrprofiler.py 
+  - python3 HRProfiler/example/run_hrprofiler.py 
