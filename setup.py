@@ -47,6 +47,7 @@ setup(
         "joblib>=0.16.0",
         "scikit-plot==0.3.7",
         "scikit-learn>=1.1.3",
+         "seaborn",
     ],
     include_package_data=True,
     zip_safe=False,
