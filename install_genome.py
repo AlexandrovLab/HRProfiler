@@ -4,7 +4,7 @@ from SigProfilerMatrixGenerator import install as genInstall
 
 
 def install_ref(ref_path):
-    genInstall.install("GRCh38", offline_files_path=ref_path)
+    genInstall.install("GRCh37", offline_files_path=ref_path)
 
 
 if __name__ == "__main__":
