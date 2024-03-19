@@ -7,7 +7,7 @@
 
 ```bash
 # clone the development branch of the *HRProfiler* tool
-git clone -b main git@github.com:amabbasi1/HRProfiler.git 
+git clone -b main git@github.com:AlexandrovLab/HRProfiler.git
 
 # install the dependencies 
 cd HRProfiler
