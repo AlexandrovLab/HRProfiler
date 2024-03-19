@@ -9,7 +9,7 @@ from HRProfiler.scripts.plotting import *
 FEATURES_LIST = ['NCTG', 'NCGT', 'DEL_5_MH', 'LOH.1.40Mb', '3-9:HET.10.40Mb', '2-4:HET.40Mb']
 ORGANS=['BREAST', 'OVARIAN']
 
-def predict(data=None, sample_col='samples', exome=True, normalize=True, hrd_prob_thresh=0.4, bootstrap=False, organ='BREAST', plot_predictions=True, RESULT_DIR=None):
+def predict(data=None, sample_col='samples', exome=True, normalize=True, hrd_prob_thresh=0.5, bootstrap=False, organ='BREAST', plot_predictions=True, RESULT_DIR=None):
 
     '''
         Predict the HRD Probability for the given samples
@@ -89,7 +89,7 @@ def predict(data=None, sample_col='samples', exome=True, normalize=True, hrd_pro
 
 def process_bootstrap(df, data, sample_col, RESULT_DIR, hrd_prob_thresh,model_type,organ):
     pp = PdfPages(f'{RESULT_DIR}output/hrd.probability.organ.{organ.lower()}.model_type.{model_type.lower()}.bootstrap.pdf')
-    df[sample_col + '_iter'] = data[sample_col + '_iter']
+    df[sample_col + '_iter'] = data[sample_col +'_iter']
 
     updated_df = pd.DataFrame()
     for sample in df[sample_col].unique():
@@ -120,4 +120,3 @@ class CustomScaler:
     def transform(self, X):
         # Assuming X is a DataFrame
         return (X - self.mean_) / self.scale_
-
