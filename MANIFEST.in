@@ -1,0 +1,6 @@
+# Documentation
+include README.md
+# Models
+recursive-include HRProfiler/scripts/Models *
+# Scripts
+include HRProfiler/scripts/*
