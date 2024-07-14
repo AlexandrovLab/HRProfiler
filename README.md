@@ -114,7 +114,7 @@ HRProfiler generates a histogram with the HRD probabilities per sample and a tab
   |UCI.95.hrd.prob | Upper confidence interval (97.5%) HRD Probability | 
 
 ## License
-Academic Software License: © 2022 University of California, San Diego (“Institution”). Academic or nonprofit researchers are permitted to use this Software (as defined below) subject to Paragraphs 1-4:
+Academic Software License: © 2024 University of California, San Diego (“Institution”). Academic or nonprofit researchers are permitted to use this Software (as defined below) subject to Paragraphs 1-4:
 
 1.	Institution hereby grants to you free of charge, so long as you are an academic or nonprofit researcher, a nonexclusive license under Institution’s copyright ownership interest in this software and any derivative works made by you thereof (collectively, the “Software”) to use, copy, and make derivative works of the Software solely for educational or academic research purposes, and to distribute such Software free of charge to other academic or nonprofit researchers for their educational or academic research purposes, in all cases subject to the terms of this Academic Software License. Except as granted herein, all rights are reserved by Institution, including the right to pursue patent protection of the Software.
 
