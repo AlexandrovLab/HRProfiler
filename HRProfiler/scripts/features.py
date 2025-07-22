@@ -56,7 +56,10 @@ def features(genome='GRCh38', exome=True, SNV_DIR=None,INDELS_DIR=None,CNV_DIR=N
         print_progress('Process terminiated! Either the SNV or the CNV features are not provided.')
         return None
 
-    features_df = merge_features(sbs_df, cnv_df, indels_df, bootstrap)
+    if indels_df is not None: 
+        features_df = merge_features(sbs_df, cnv_df, indels_df, bootstrap) 
+    else: 
+        features_df = merge_features(sbs_df, cnv_df, None, bootstrap)
     print_progress('************************* Done extracting HRProfiler features *************************')
     return features_df
 
@@ -158,6 +161,9 @@ def extract_sbs_features(SNV_DIR,RESULT_DIR=None,exome=True,genome="GRCh38",boot
             bootstrap_indel_df =  bootstrap_features(data=indel_df, sample_col='samples', regex="Del:|Ins:",nreplicates=nreplicates, features=['DEL_5_MH'], exome=exome)
         else:
             indel_df =  indel_df.loc[:,['samples','DEL_5_MH']]
+
+        # add the indel features to the SBS dataframe:
+        sbs_df = pd.merge(sbs_df, indel_df, on='samples', how='outer') 
 
     cleanup(SNV_DIR,RESULT_DIR)
     return pd.merge(bootstrap_sbs_df, bootstrap_indel_df, on='samples_iter') if ('96' in matrices) and ('ID' in matrices) and (check_for_indels) and bootstrap else (bootstrap_sbs_df if bootstrap else sbs_df)
