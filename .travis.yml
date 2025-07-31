@@ -3,7 +3,6 @@ language: python
 
 python:
   - '3.9'
-  - '3.12'
 
 before_install:
   - pip install --upgrade setuptools packaging
