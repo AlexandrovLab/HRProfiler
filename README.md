@@ -6,12 +6,7 @@
 ## Installation
 
 ```bash
-# clone the development branch of the *HRProfiler* tool
-git clone -b main git@github.com:AlexandrovLab/HRProfiler.git
-
-# install the dependencies 
-cd HRProfiler
-python3 setup.py install
+pip install HRProfiler
 ```
 
 ## Run HRProfiler
