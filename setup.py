@@ -13,7 +13,7 @@ def readme():
     long_description = f.read()
     return(long_description)
     
-VERSION = '0.0.1'
+VERSION = '0.0.2'
 
 def write_version_py(filename='HRProfiler/version.py'):
   # Copied from numpy setup.py
@@ -40,14 +40,18 @@ setup(
     author_email="amabbasi@ucsd.edu",
     license="UCSD",
     packages=["HRProfiler", "HRProfiler.scripts"],
-    python_requires=">=3.8",
+    python_requires=">=3.9",
     install_requires=[
-        "sigProfilerPlotting>=1.3.16",
-        "SigProfilerMatrixGenerator>=1.2.23",
+        "sigProfilerPlotting>=1.4.1",
+        "SigProfilerMatrixGenerator>=1.3.5",
         "joblib>=0.16.0",
         "scikit-plot==0.3.7",
         "scikit-learn>=1.1.3",
          "seaborn",
+         "numpy >= 2.0.0",
+         "pandas >= 2.0.0",
+         "matplotlib >= 3.4.3",
+
     ],
     include_package_data=True,
     zip_safe=False,

@@ -1,0 +1,21 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+*.whl
+
+# macOS
+*.DS_Store
+
+# IDE / editor settings
+.vscode/
+.idea/
+
+# Test / example output
+HRProfiler/example/output_example1/
