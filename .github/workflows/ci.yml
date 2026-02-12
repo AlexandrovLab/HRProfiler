@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.9', '3.12']
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Upgrade pip, setuptools, and packaging
+      run: |
+        python -m pip install --upgrade pip setuptools packaging
+    
+    - name: Cache src directory
+      uses: actions/cache@v4
+      with:
+        path: ./src/
+        key: ${{ runner.os }}-src-grch37
+        restore-keys: |
+          ${{ runner.os }}-src-
+    
+    - name: Download GRCh37.tar.gz if not present
+      run: |
+        if [ ! -f ./src/GRCh37.tar.gz ]; then
+          wget --connect-timeout=10 --tries=20 ftp://alexandrovlab-ftp.ucsd.edu/pub/tools/SigProfilerMatrixGenerator/GRCh37.tar.gz -P ./src/
+        fi
+    
+    - name: Install package
+      run: |
+        pip install .
+    
+    - name: Install genome
+      run: |
+        python install_genome.py ${{ github.workspace }}/src/
+    
+    - name: Run integration test
+      run: |
+        python3 HRProfiler/example/run_hrprofiler.py
